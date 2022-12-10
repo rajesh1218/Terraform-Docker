@@ -16,6 +16,7 @@ resource "docker_image" "ubuntu" {
 }
 resource "docker_container" "ubuntu" {
   name = var.container_name
+  mage    = docker_image.ubuntu.image_id
   must_run = true
   command = [
     "tail",
